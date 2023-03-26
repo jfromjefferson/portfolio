@@ -1,0 +1,73 @@
+
+.ide-options {
+    border-bottom: 1px solid var(--black-900);
+    background-color: var(--black-800);
+    display: flex;
+    align-items: center;
+
+    .first-area {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5px;
+        color: var(--gray-100);
+        min-width: var(--sidebar-width);
+
+        .project-area {
+            display: flex;
+            align-items: center;
+            border: 1px solid transparent;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: border 0.2s;
+
+            &:hover {
+                border: 1px solid var(--gray-100);
+            }
+        }
+
+        svg {
+            margin: 0 7px;
+            cursor: pointer;
+            transition: filter 0.2s;
+
+            &.folder-open {
+                color: var(--source-root-color);
+                font-size: 19px;
+            }
+
+            &:hover {
+                filter: brightness(0.8);
+            }
+        }
+    }
+
+    .second-area {
+        cursor: pointer;
+        
+        .py-file-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--gray-50);
+            padding: 5px;
+            color: var(--gray-100);
+
+            .filename {
+                display: block;
+                margin: 0 7px;
+            }
+
+            .close {
+                border-radius: 50%;
+                width: 20px;
+                text-align: center;
+                font-size: 14px;
+
+                &:hover {
+                    background-color: var(--black-800);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+:root {
+    --black-900: #2a2b2a;
+    --black-800: #3c3f41;
+    --green-500: #558f2d;
+    --green-300: #516c4c;
+    --gray-50: #4e5355;
+    --gray-100: #A9B7C6;
+    --gray-300: #777060;
+    --folder-color: #86939b;
+    --source-root-color: #3f87a0;
+    --boolean-color: #c67432;
+    --function-color: #f4a047;
+    --blue-900: #0c283e;
+    --blue-500: #315f77;
+    --blue-400: #2e64ca;
+
+    --sidebar-width: 300px;
+    --terminal-height: 300px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+html, body, #root {
+    background-color: var(--black-900);
+    height: 100%;
+    overflow: hidden;
+}
+
+main {
+    position: absolute;
+    left: var(--sidebar-width);
+    top: 35px;
+    width: calc(100% - var(--sidebar-width));
+    height: calc(100% - var(--terminal-height));
+    color: var(--gray-100);
+}
+
+.terminal {
+    min-height: var(--terminal-height);
+    background-color: var(--black-800);
+}
