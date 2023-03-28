@@ -1,12 +1,12 @@
 .sidebar {
     max-width: var(--sidebar-width);
-    height: calc(100% - var(--sidebar-width));
+    height: calc(100% - 332px);
     background-color: var(--black-800);
 
     .sidebar-options {
         border-right: 1px solid var(--black-900);
         max-width: 30px;
-        height: calc(100% - 30px);
+        height: calc(100% - 133px);
         display: flex;
         flex-direction: column;
         justify-content: space-between;

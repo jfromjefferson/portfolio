@@ -17,8 +17,11 @@ export function Sidebar() {
                 </div>
             </div>
             <div className="main-folder">
+                <span></span>
                 <FaFolder />
-                <h3>main</h3> <span>~/Documents/Projects/...</span>
+                <h3>main</h3>
+                <span>~/Documents/Projects/Portfolio/...</span>
+                <span></span>
             </div>
             <div className="file-area">
                 <FaPython />

@@ -4,14 +4,16 @@ import { Terminal } from "./components/Terminal";
 
 export function App() {
   return (
-    <>
-      <IdeOptions />
-      <Sidebar />
-      <main>
-        <span>Main</span>
-      </main>
-      <Terminal />
-    </>
+    <main className="main-area">
+        <div className="ide">
+          <IdeOptions />
+          <Sidebar />
+          <div className="editor">
+            <span>Main</span>
+          </div>
+          <Terminal />
+      </div>
+    </main>
   )
 }
 

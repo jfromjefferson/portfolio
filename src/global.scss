@@ -14,7 +14,7 @@
     --blue-500: #315f77;
     --blue-400: #2e64ca;
 
-    --sidebar-width: 300px;
+    --sidebar-width: 380px;
     --terminal-height: 300px;
 }
 
@@ -32,16 +32,47 @@ html, body, #root {
     overflow: hidden;
 }
 
-main {
-    position: absolute;
-    left: var(--sidebar-width);
-    top: 35px;
-    width: calc(100% - var(--sidebar-width));
-    height: calc(100% - var(--terminal-height));
-    color: var(--gray-100);
+.main-area {
+    height: 100%;
+    padding: 50px 160px;
+    background-image: linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
 }
 
-.terminal {
-    min-height: var(--terminal-height);
-    background-color: var(--black-800);
+.ide {
+    height: 100%;
+    border: 1px solid var(--black-800);
+    border-radius: 5px;
+}
+
+.editor {
+    position: absolute;
+    left: calc(var(--sidebar-width) + 161px);
+    top: 83px;
+    width: calc(100% - 702px);
+    height: calc(100% - 434px);
+    color: var(--gray-100);
+    background-color: var(--black-900);
+}
+
+@media (max-width: 850px) {
+    .ide {
+        border-radius: 0;
+    }
+    .main-area {
+        padding: 0;
+    }
+
+    .sidebar, .editor {
+        display: none;
+    }
+
+    .terminal {
+        height: 100%;
+        padding-left: 0;
+    }
+
+    .ide-options .config-area {
+        display: none;
+    }
+    
 }

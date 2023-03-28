@@ -1,6 +1,63 @@
 
 .terminal {
-    span {
-        color: green;
+    height: var(--terminal-height);
+    background-color: var(--black-800);
+    padding-left: 30px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+
+    .terminal-options {
+        border-top: 1px solid var(--black-900);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px;
+        color: var(--gray-100);
+        background-color: var(--gray-50);
+
+        .first-area {
+            .local {
+                margin-right: 8px;
+                padding: 0 8px;
+                cursor: pointer;
+            }
+
+            span:nth-child(2) {
+                border-bottom: 2px solid var(--gray-100);
+            }
+        }
+
+        .second-area {
+            svg {
+                cursor: pointer;
+                margin-right: 15px;
+
+                &:hover {
+                    filter: brightness(0.8);
+                }
+            }
+        }
+
+        
+    }
+
+    .terminal-area {
+        height: calc(100% - 32px);
+        background-color: var(--black-900);
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+
+        p {
+            color: var(--gray-100);
+
+            .green-text {
+                margin-left: 8px;
+                color: var(--green-500);
+            }
+
+            .blue-text {
+                color: var(--blue-400);
+            }
+        }
     }
 }
