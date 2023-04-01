@@ -44,17 +44,7 @@ html, body, #root {
     border-radius: 5px;
 }
 
-.editor {
-    position: absolute;
-    left: calc(var(--sidebar-width) + 161px);
-    top: 83px;
-    width: calc(100% - 702px);
-    height: calc(100% - 434px);
-    color: var(--gray-100);
-    background-color: var(--black-900);
-}
-
-@media (max-width: 850px) {
+@media (max-width: 768px) {
     .ide {
         border-radius: 0;
     }

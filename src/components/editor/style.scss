@@ -1,0 +1,78 @@
+.editor {
+    position: absolute;
+    left: calc(var(--sidebar-width) + 161px);
+    top: 83px;
+    width: calc(100% - 702px);
+    height: calc(100% - 434px);
+    color: var(--gray-100);
+    background-color: var(--black-900);
+    padding: 5px;
+    overflow: auto;
+
+    .comment-area {
+        p {
+            color: #828a94;
+        }
+    }
+
+    .import-area {
+        margin-top: 20px;
+        span {
+            color: var(--boolean-color);
+        }
+    }
+
+    .code-area {
+        margin-top: 30px;
+        .function {
+            .def {
+                color: var(--boolean-color);
+            }
+
+            .main {
+                color: var(--function-color);
+            }
+        }
+
+        .function-body {
+            margin-left: 38px;
+
+            .green-text {
+                color: var(--green-500);
+            }
+
+            .blue-text {
+                color: var(--blue-400);
+            }
+
+            .first-print {
+                margin-top: 15px;
+            }
+
+            .loop {
+                span {
+                    color: var(--boolean-color);
+                }
+            }
+
+            .print {
+                margin-left: 39px;
+            }
+        }
+
+        .function-call {
+            margin-top: 50px;
+            .bool {
+                color: var(--boolean-color);
+            }
+
+            .green-text {
+                color: var(--green-500);
+            }
+
+            .main-function {
+                margin-left: 30px;
+            }
+        }
+    }
+}

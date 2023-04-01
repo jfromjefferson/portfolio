@@ -58,6 +58,14 @@
             .blue-text {
                 color: var(--blue-400);
             }
+
+            a {
+                color: var(--gray-100);
+
+                &:hover {
+                    filter: brightness(0.8);
+                }
+            }
         }
     }
 }

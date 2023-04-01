@@ -1,6 +1,7 @@
 import { IdeOptions } from "./components/IdeOptions";
 import { Sidebar } from "./components/Sidebar";
 import { Terminal } from "./components/Terminal";
+import { Editor } from "./components/editor/main";
 
 export function App() {
   return (
@@ -8,9 +9,7 @@ export function App() {
         <div className="ide">
           <IdeOptions />
           <Sidebar />
-          <div className="editor">
-            <span>Main</span>
-          </div>
+          <Editor />
           <Terminal />
       </div>
     </main>

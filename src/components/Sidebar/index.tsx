@@ -1,4 +1,4 @@
-import { FaFolder, FaPython } from 'react-icons/fa';
+import { FaFolder, FaPython, FaCodeBranch, FaCodepen, FaBookmark, FaCubes } from 'react-icons/fa';
 
 import './styles.scss'
 
@@ -8,12 +8,12 @@ export function Sidebar() {
             <div className="sidebar-options">
                 <div className="top-options">
                     <span className='selected'><FaFolder /> Project</span>
-                    <span>Commit</span>
-                    <span>Pull Requests</span>
+                    <span><FaCodeBranch /> Commit</span>
+                    <span><FaCodepen /> Pull Requests</span>
                 </div>
                 <div className="bottom-options">
-                    <span>Bookmarks</span>
-                    <span>Structure</span>
+                    <span><FaBookmark /> Bookmarks</span>
+                    <span><FaCubes /> Structure</span>
                 </div>
             </div>
             <div className="main-folder">
