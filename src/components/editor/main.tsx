@@ -4,11 +4,10 @@ export function Editor() {
     return (
         <div className="editor">
             <div className="comment-area">
-                <p># Hi! My name is Jefferson, i'm a web developer</p>
-                <p># Python is my main language, but i have knowledge and experience with other languages such as Javascript and Dart</p>
-                <p># Flutter lover</p>
+                <p># Hi! My name is Jefferson, i'm a web developer!</p>
+                <p># Python is my main language, but i have knowledge and experience with other languages such as Javascript and Dart and Go!</p>
                 <p>#</p>
-                <p># Pycharm style portfolio, made using React + scss</p>
+                <p># Pycharm style portfolio, made using React + scss!</p>
             </div>
             <div className="import-area">
                 <span>import</span> requests
