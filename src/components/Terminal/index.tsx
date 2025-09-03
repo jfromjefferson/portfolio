@@ -16,10 +16,6 @@ export function Terminal() {
             type: 'email'
         },
         {
-            element: <a href="https://web.whatsapp.com/send?phone=53981470762" target="_blank">(53) 98147-0762</a>, 
-            type: 'whatsapp'
-        },
-        {
             type: 'linkedin',
             element: <a href='https://www.linkedin.com/in/jfromjefferson' target="_blank">https://www.linkedin.com/in/jfromjefferson</a>
         },
