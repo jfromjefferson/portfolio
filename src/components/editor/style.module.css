@@ -6,7 +6,7 @@
   height: 100%;
 
   .commentArea {
-    p {
+    & p {
       color: #828a94;
     }
   }
@@ -14,7 +14,7 @@
   .importArea {
     margin-top: 20px;
 
-    span {
+    & span {
       color: var(--boolean-color);
     }
   }
@@ -48,7 +48,7 @@
       }
 
       .loop {
-        span {
+        & span {
           color: var(--boolean-color);
         }
       }

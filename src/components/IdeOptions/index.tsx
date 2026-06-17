@@ -1,5 +1,5 @@
 import { FaFolderOpen, FaCaretDown, FaCrosshairs, FaCog, FaMinus, FaPython } from 'react-icons/fa'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 export function IdeOptions() {
   return (

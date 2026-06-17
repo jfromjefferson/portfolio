@@ -14,7 +14,7 @@
     justify-content: space-between;
     align-items: center;
 
-    span {
+    & span {
       display: block;
       writing-mode: vertical-rl;
       transform: rotate(180deg);
@@ -28,7 +28,7 @@
         background-color: var(--black-900);
       }
 
-      svg {
+      & svg {
         transform: rotate(180deg);
       }
 
@@ -51,16 +51,16 @@
       align-items: center;
       padding: 4px 0;
 
-      svg {
+      & svg {
         color: var(--folder-color);
       }
 
-      h3 {
+      & h3 {
         color: var(--gray-100);
         font-size: 14px;
       }
 
-      span {
+      & span {
         font-size: 12px;
         color: var(--gray-300);
       }
@@ -77,7 +77,7 @@
       transition: filter 0.2s;
       font-size: 14px;
 
-      span {
+      & span {
         margin: 0 5px;
       }
 
@@ -89,18 +89,16 @@
 }
 
 @media (max-width: 1024px) {
-  .sidebar {
-    .content .mainFolder {
-      h3 {
-        font-size: 13px;
-      }
+  .sidebar .content .mainFolder {
+    & h3 {
+      font-size: 13px;
+    }
 
-      span {
-        font-size: 11px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
+    & span {
+      font-size: 11px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
   }
 }

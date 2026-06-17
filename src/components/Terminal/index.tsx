@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { FaCog, FaMinus } from 'react-icons/fa'
 import { contacts } from '../../data/contact'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 const COMMAND = 'python main.py'
 const prompt = (

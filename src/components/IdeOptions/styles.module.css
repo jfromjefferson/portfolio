@@ -27,7 +27,7 @@
       }
     }
 
-    svg {
+    & svg {
       margin: 0 7px;
       cursor: pointer;
       transition: filter 0.2s;

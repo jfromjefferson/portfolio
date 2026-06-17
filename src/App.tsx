@@ -3,7 +3,7 @@ import { IdeOptions } from './components/IdeOptions'
 import { Sidebar } from './components/Sidebar'
 import { Terminal } from './components/Terminal'
 import { Editor } from './components/editor/main'
-import styles from './App.module.scss'
+import styles from './App.module.css'
 
 type MobileTab = 'explorer' | 'editor' | 'terminal'
 

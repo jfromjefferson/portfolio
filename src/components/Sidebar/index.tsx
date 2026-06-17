@@ -1,5 +1,5 @@
 import { FaFolder, FaPython, FaCodeBranch, FaCodepen, FaBookmark, FaCubes } from 'react-icons/fa'
-import styles from './styles.module.scss'
+import styles from './styles.module.css'
 
 export function Sidebar() {
   return (
