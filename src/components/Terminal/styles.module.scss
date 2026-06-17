@@ -1,0 +1,137 @@
+.terminal {
+  height: var(--terminal-height);
+  background-color: var(--black-800);
+  overflow: hidden;
+
+  .terminalOptions {
+    border-top: 1px solid var(--black-900);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 8px;
+    color: var(--gray-100);
+    background-color: var(--gray-50);
+
+    .firstArea {
+      .local {
+        margin-right: 8px;
+        padding: 0 8px;
+        cursor: pointer;
+      }
+
+      span:nth-child(2) {
+        border-bottom: 2px solid var(--gray-100);
+      }
+    }
+
+    .secondArea {
+      svg {
+        cursor: pointer;
+        margin-right: 15px;
+
+        &:hover {
+          filter: brightness(0.8);
+        }
+      }
+    }
+  }
+
+  .terminalArea {
+    height: calc(100% - 32px);
+    background-color: var(--black-900);
+    padding: 8px 12px;
+    overflow-y: auto;
+
+    .line {
+      color: var(--gray-100);
+      line-height: 1.65;
+      font-size: 14px;
+      word-break: break-word;
+    }
+
+    .green {
+      color: var(--green-500);
+    }
+
+    .blue {
+      color: var(--blue-400);
+    }
+
+    .gray {
+      color: var(--gray-100);
+    }
+
+    .cyan {
+      color: var(--source-root-color);
+    }
+
+    .dim {
+      color: var(--gray-300);
+    }
+
+    a {
+      color: var(--gray-100);
+
+      &:hover {
+        filter: brightness(0.8);
+      }
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 15px;
+      background: var(--gray-100);
+      vertical-align: text-bottom;
+      margin-left: 1px;
+      animation: cursorBlink 0.7s step-end infinite;
+    }
+
+    .spinnerText::after {
+      content: '';
+      animation: dotPulse 1.2s steps(4) infinite;
+    }
+
+    .reveal {
+      animation: fadeSlideIn 0.35s ease both;
+    }
+  }
+}
+
+@keyframes cursorBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes dotPulse {
+  0%   { content: ''; }
+  25%  { content: '.'; }
+  50%  { content: '..'; }
+  75%  { content: '...'; }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .terminal {
+    height: 100%;
+
+    .terminalArea {
+      font-size: 13px;
+
+      .line {
+        line-height: 1.55;
+      }
+    }
+  }
+}

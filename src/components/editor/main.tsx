@@ -1,38 +1,55 @@
-import './style.scss'
+import styles from './style.module.scss'
 
 export function Editor() {
-    return (
-        <div className="editor">
-            <div className="comment-area">
-                <p># Hi! My name is Jefferson, i'm a web developer!</p>
-                <p># Python is my main language, but i have knowledge and experience with other languages such as Javascript and Dart and Go!</p>
-                <p>#</p>
-                <p># Pycharm style portfolio, made using React + scss!</p>
-            </div>
-            <div className="import-area">
-                <span>import</span> requests
-            </div>
-            <div className="code-area">
-                <p className="function">
-                    <span className="def">def</span> <span className="main">main</span>():
-                </p>
-                <div className="function-body">
-                    <p>response = requests.get(<span className="green-text">'https://api.oitobits.tech'</span>).json()</p>
-                    <p className="first-print">
-                        <span className="blue-text">print</span>("Hello strange! Let's talk?")
-                    </p>
-                    <p className="loop">
-                        <span>for</span> contact <span>in</span> response:
-                    </p>
-                    <p className="print">
-                        <span className="blue-text">print</span>(f"[{'{'}contact.get(<span className="green-text">'type'</span>){'}'}]: {'{'}contact.get(<span className="green-text">'info'</span>){'}'}")
-                    </p>
-                </div>
-                <div className="function-call">
-                    <p><span className="bool">if</span> __name__ == <span className="green-text">'__main__'</span>:</p>
-                    <p className="main-function">main()</p>
-                </div>
-            </div>
+  return (
+    <div className={styles.editor} role="region" aria-label="Code editor">
+      <div className={styles.commentArea}>
+        <p># Hi! I&apos;m Jefferson, a web developer focused on creating clean,</p>
+        <p># scalable, and user-friendly applications.</p>
+        <p>#</p>
+        <p># My primary language is Python, but i also have hands-on</p>
+        <p># experience with JavaScript, Dart, and C#.</p>
+        <p>#</p>
+        <p># This portfolio was designed with a PyCharm-inspired interface</p>
+        <p># and developed using React and SCSS.</p>
+      </div>
+      <div className={styles.importArea}>
+        <span>import</span> requests
+      </div>
+      <div className={styles.codeArea}>
+        <p className={styles.function}>
+          <span className={styles.def}>def</span>{' '}
+          <span className={styles.main}>main</span>():
+        </p>
+        <div className={styles.functionBody}>
+          <p>
+            response = requests.get(
+            <span className={styles.greenText}>&apos;https://api.oitobits.tech&apos;</span>
+            ).json()
+          </p>
+          <p className={styles.firstPrint}>
+            <span className={styles.blueText}>print</span>(&quot;Hello strange! Let&apos;s
+            talk?&quot;)
+          </p>
+          <p className={styles.loop}>
+            <span>for</span> contact <span>in</span> response:
+          </p>
+          <p className={styles.print}>
+            <span className={styles.blueText}>print</span>(f&quot;[{'{'}contact.get(
+            <span className={styles.greenText}>&apos;type&apos;</span>)
+            {'}'}]: {'{'}contact.get(
+            <span className={styles.greenText}>&apos;info&apos;</span>)
+            {'}'}&quot;)
+          </p>
         </div>
-    )
+        <div className={styles.functionCall}>
+          <p>
+            <span className={styles.bool}>if</span> __name__ =={' '}
+            <span className={styles.greenText}>&apos;__main__&apos;</span>:
+          </p>
+          <p className={styles.mainFunction}>main()</p>
+        </div>
+      </div>
+    </div>
+  )
 }

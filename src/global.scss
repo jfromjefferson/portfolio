@@ -1,68 +1,68 @@
 :root {
-    --black-900: #2a2b2a;
-    --black-800: #3c3f41;
-    --green-500: #558f2d;
-    --green-300: #516c4c;
-    --gray-50: #4e5355;
-    --gray-100: #A9B7C6;
-    --gray-300: #777060;
-    --folder-color: #86939b;
-    --source-root-color: #3f87a0;
-    --boolean-color: #c67432;
-    --function-color: #f4a047;
-    --blue-900: #0c283e;
-    --blue-500: #315f77;
-    --blue-400: #2e64ca;
+  --black-900: #2a2b2a;
+  --black-800: #3c3f41;
+  --green-500: #558f2d;
+  --green-300: #516c4c;
+  --gray-50: #4e5355;
+  --gray-100: #a9b7c6;
+  --gray-300: #777060;
+  --folder-color: #86939b;
+  --source-root-color: #3f87a0;
+  --boolean-color: #c67432;
+  --function-color: #f4a047;
+  --blue-900: #0c283e;
+  --blue-500: #315f77;
+  --blue-400: #2e64ca;
 
-    --sidebar-width: 380px;
-    --terminal-height: 300px;
+  --sidebar-width: 380px;
+  --terminal-height: 38vh;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    outline: none;
-    font-family: 'JetBrains Mono', monospace;
-}
-
-html, body, #root {
-    background-color: var(--black-900);
-    height: 100%;
-    overflow: hidden;
-}
-
-.main-area {
-    height: 100%;
-    padding: 50px 160px;
-    background-image: linear-gradient(to right, #C6FFDD, #FBD786, #f7797d);
-}
-
-.ide {
-    height: 100%;
-    border: 1px solid var(--black-800);
-    border-radius: 5px;
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 260px;
+    --terminal-height: 34vh;
+  }
 }
 
 @media (max-width: 768px) {
-    .ide {
-        border-radius: 0;
-    }
-    .main-area {
-        padding: 0;
-    }
+  :root {
+    --sidebar-width: 100%;
+    --terminal-height: auto;
+  }
+}
 
-    .sidebar, .editor {
-        display: none;
-    }
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .terminal {
-        height: 100%;
-        padding-left: 0;
-    }
+html,
+body,
+#root {
+  background-color: var(--black-900);
+  height: 100%;
+  overflow: hidden;
+  font-family: 'JetBrains Mono', monospace;
+}
 
-    .ide-options .config-area {
-        display: none;
-    }
-    
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black-800);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-50);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-300);
 }

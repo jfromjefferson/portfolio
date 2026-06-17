@@ -1,0 +1,83 @@
+.editor {
+  background-color: var(--black-900);
+  color: var(--gray-100);
+  padding: 8px 12px 24px;
+  overflow: auto;
+  height: 100%;
+
+  .commentArea {
+    p {
+      color: #828a94;
+    }
+  }
+
+  .importArea {
+    margin-top: 20px;
+
+    span {
+      color: var(--boolean-color);
+    }
+  }
+
+  .codeArea {
+    margin-top: 30px;
+
+    .function {
+      .def {
+        color: var(--boolean-color);
+      }
+
+      .main {
+        color: var(--function-color);
+      }
+    }
+
+    .functionBody {
+      margin-left: 38px;
+
+      .greenText {
+        color: var(--green-500);
+      }
+
+      .blueText {
+        color: var(--blue-400);
+      }
+
+      .firstPrint {
+        margin-top: 15px;
+      }
+
+      .loop {
+        span {
+          color: var(--boolean-color);
+        }
+      }
+
+      .print {
+        margin-left: 39px;
+      }
+    }
+
+    .functionCall {
+      margin-top: 50px;
+
+      .bool {
+        color: var(--boolean-color);
+      }
+
+      .greenText {
+        color: var(--green-500);
+      }
+
+      .mainFunction {
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .editor {
+    padding: 4px 8px 16px;
+  }
+}

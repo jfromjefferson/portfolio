@@ -1,71 +1,121 @@
+import { useState, useEffect, useRef } from 'react'
 import { FaCog, FaMinus } from 'react-icons/fa'
-import './styles.scss'
-import { ReactElement } from 'react'
+import { contacts } from '../../data/contact'
+import styles from './styles.module.scss'
 
-interface Contact {
-    info?: string,
-    type: string,
-    element?: ReactElement,
-}
+const COMMAND = 'python main.py'
+const prompt = (
+  <>
+    (env)
+    <span className={styles.green}> jfromjefferson@jefferson-pc</span>
+    <span className={styles.gray}>:</span>
+    <span className={styles.blue}>~/Documents/Projects/Portfolio</span>
+    <span>$ </span>
+  </>
+)
 
+type Step = 'idle' | 'typing' | 'executing' | 'output'
 
 export function Terminal() {
-    const contact_data: Contact[] = [
-        {
-            info: 'jeffsilva1@outlook.com',
-            type: 'email'
-        },
-        {
-            type: 'linkedin',
-            element: <a href='https://www.linkedin.com/in/jfromjefferson' target="_blank">https://www.linkedin.com/in/jfromjefferson</a>
-        },
-        {
-            type: 'github',
-            element: <a href='https://github.com/jfromjefferson' target="_blank">https://github.com/jfromjefferson</a>
-        },
-    ]
+  const [step, setStep] = useState<Step>('idle')
+  const [typed, setTyped] = useState('')
+  const typedRef = useRef('')
 
-    return (
-        <div className='terminal'>
-            <div className="terminal-options">
-                <div className="first-area">
-                    <span>Terminal: </span>
-                    <span className="local selected">Local</span>
-                    <span className="local">Local (2)</span>
-                </div>
-                <div className="second-area">
-                    <FaCog />
-                    <FaMinus />
-                </div>
-            </div>
-            <div className="terminal-area">
-                <p>
-                    (env) 
-                    <span className="green-text">
-                        jfromjefferson@jefferson-pc
-                    </span>
-                    <span className="gray-text">:</span>
-                    <span className="blue-text">~/Documents/Projects/Portfolio</span>
-                    <span>$ </span>
-                    <span>Hello strange! Let's talk?</span>
-                </p>
-                {
-                   contact_data.map(item => (
-                        <p key={item.type}>
-                            (env) 
-                            <span className="green-text">
-                                jfromjefferson@jefferson-pc
-                            </span>
-                            <span className="gray-text">:</span>
-                            <span className="blue-text">~/Documents/Projects/Portfolio</span>
-                            <span>$ </span>
-                            <span>[{item.type}]: {item.info ?? item.element}</span>
-                        </p>
-                        )
-                    ) 
-                }
+  useEffect(() => {
+    const t1 = setTimeout(() => setStep('typing'), 400)
+    return () => clearTimeout(t1)
+  }, [])
 
-            </div>
+  useEffect(() => {
+    if (step !== 'typing') return
+    if (typed.length < COMMAND.length) {
+      const timer = setTimeout(() => {
+        const next = COMMAND.slice(0, typed.length + 1)
+        typedRef.current = next
+        setTyped(next)
+      }, 60)
+      return () => clearTimeout(timer)
+    }
+    const t2 = setTimeout(() => setStep('executing'), 300)
+    return () => clearTimeout(t2)
+  }, [step, typed])
+
+  useEffect(() => {
+    if (step !== 'executing') return
+    const t3 = setTimeout(() => setStep('output'), 1600)
+    return () => clearTimeout(t3)
+  }, [step])
+
+  return (
+    <div className={styles.terminal} role="region" aria-label="Terminal">
+      <div className={styles.terminalOptions}>
+        <div className={styles.firstArea}>
+          <span>Terminal: </span>
+          <span className={`${styles.local} ${styles.selected}`}>Local</span>
+          <span className={styles.local}>Local (2)</span>
         </div>
-    )
+        <div className={styles.secondArea}>
+          <FaCog role="button" tabIndex={0} aria-label="Terminal settings" />
+          <FaMinus role="button" tabIndex={0} aria-label="Minimize terminal" />
+        </div>
+      </div>
+      <div className={styles.terminalArea}>
+        <p className={styles.line}>
+          {prompt}
+          {step === 'idle' && <span className={styles.cursor} />}
+          {step !== 'idle' && <span>{typed}</span>}
+          {step === 'typing' && typed.length < COMMAND.length && (
+            <span className={styles.cursor} />
+          )}
+        </p>
+
+        {step === 'executing' && (
+          <p className={styles.line}>
+            <span className={`${styles.spinnerText} ${styles.green}`}>
+              Executing main.py
+            </span>
+          </p>
+        )}
+
+        {step === 'output' && (
+          <>
+            <p className={`${styles.line} ${styles.reveal}`}>
+              <span className={styles.dim}>──────────────────────────────</span>
+            </p>
+            {contacts.map((item, i) => (
+              <p
+                key={item.type}
+                className={`${styles.line} ${styles.reveal}`}
+                style={{ animationDelay: `${0.2 + i * 0.18}s` }}
+              >
+                <span className={styles.cyan}>
+                  [{item.type}]
+                </span>
+                :{' '}
+                {item.url ? (
+                  <a href={item.url} target="_blank" rel="noopener noreferrer">
+                    {item.info}
+                  </a>
+                ) : (
+                  item.info
+                )}
+              </p>
+            ))}
+            <p
+              className={`${styles.line} ${styles.reveal}`}
+              style={{ animationDelay: `${0.2 + contacts.length * 0.18}s` }}
+            >
+              <span className={styles.dim}>──────────────────────────────</span>
+            </p>
+            <p
+              className={`${styles.line} ${styles.reveal}`}
+              style={{ animationDelay: `${0.4 + contacts.length * 0.18}s` }}
+            >
+              <span className={styles.green}>&#10003; Process finished with exit code 0</span>
+            </p>
+          </>
+        )}
+      </div>
+    </div>
+  )
 }

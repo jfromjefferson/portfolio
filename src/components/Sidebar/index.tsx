@@ -1,32 +1,41 @@
-import { FaFolder, FaPython, FaCodeBranch, FaCodepen, FaBookmark, FaCubes } from 'react-icons/fa';
-
-import './styles.scss'
+import { FaFolder, FaPython, FaCodeBranch, FaCodepen, FaBookmark, FaCubes } from 'react-icons/fa'
+import styles from './styles.module.scss'
 
 export function Sidebar() {
-    return (
-        <div className="sidebar">
-            <div className="sidebar-options">
-                <div className="top-options">
-                    <span className='selected'><FaFolder /> Project</span>
-                    <span><FaCodeBranch /> Commit</span>
-                    <span><FaCodepen /> Pull Requests</span>
-                </div>
-                <div className="bottom-options">
-                    <span><FaBookmark /> Bookmarks</span>
-                    <span><FaCubes /> Structure</span>
-                </div>
-            </div>
-            <div className="main-folder">
-                <span></span>
-                <FaFolder />
-                <h3>main</h3>
-                <span>~/Documents/Projects/Portfolio/...</span>
-                <span></span>
-            </div>
-            <div className="file-area">
-                <FaPython />
-                <span>main.py</span>
-            </div>
+  return (
+    <aside className={styles.sidebar} aria-label="Project sidebar">
+      <nav className={styles.sidebarOptions} aria-label="Sidebar navigation">
+        <div className={styles.topOptions}>
+          <span className={styles.selected}>
+            <FaFolder aria-hidden="true" /> Project
+          </span>
+          <span>
+            <FaCodeBranch aria-hidden="true" /> Commit
+          </span>
+          <span>
+            <FaCodepen aria-hidden="true" /> Pull Requests
+          </span>
         </div>
-    )
+        <div className={styles.bottomOptions}>
+          <span>
+            <FaBookmark aria-hidden="true" /> Bookmarks
+          </span>
+          <span>
+            <FaCubes aria-hidden="true" /> Structure
+          </span>
+        </div>
+      </nav>
+      <div className={styles.content}>
+        <div className={styles.mainFolder}>
+          <FaFolder aria-hidden="true" />
+          <h3>main</h3>
+          <span>~/Documents/Projects/Portfolio/...</span>
+        </div>
+        <div className={styles.fileArea}>
+          <FaPython aria-hidden="true" />
+          <span>main.py</span>
+        </div>
+      </div>
+    </aside>
+  )
 }
