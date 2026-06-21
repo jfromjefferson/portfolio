@@ -80,6 +80,9 @@ export function Terminal() {
         {step === 'output' && (
           <>
             <p className={`${styles.line} ${styles.reveal}`}>
+              Hello stranger! Let's talk?
+            </p>
+            <p className={`${styles.line} ${styles.reveal}`}>
               <span className={styles.dim}>──────────────────────────────</span>
             </p>
             {contacts.map((item, i) => (

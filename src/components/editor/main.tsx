@@ -24,11 +24,11 @@ export function Editor() {
         <div className={styles.functionBody}>
           <p>
             response = requests.get(
-            <span className={styles.greenText}>&apos;https://api.oitobits.tech&apos;</span>
+            <span className={styles.greenText}>&apos;https://magenta-fox-5d5416.netlify.app&apos;</span>
             ).json()
           </p>
           <p className={styles.firstPrint}>
-            <span className={styles.blueText}>print</span>(&quot;Hello strange! Let&apos;s
+            <span className={styles.blueText}>print</span>(&quot;Hello stranger! Let&apos;s
             talk?&quot;)
           </p>
           <p className={styles.loop}>
